@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  smart-resume-analyzer:
+    build: .
+    image: smart-resume-v2
+    container_name: resume_ai_app
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+      - ./database:/app/database # Persist SQLite DB
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    restart: unless-stopped

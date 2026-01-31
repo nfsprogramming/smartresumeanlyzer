@@ -1,150 +1,81 @@
-# Smart Resume Analyzer
+# 🚀 Smart Resume Analyzer 2.0
 
-An AI-powered resume analysis tool that helps optimize resumes for Applicant Tracking Systems (ATS) with intelligent insights and recommendations.
+An Enterprise-Grade AI Career Platform that helps you land your dream job using advanced Job Description analysis, Resume Rewriting, and Mock Interviews.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Python](https://img.shields.io/badge/python-3.9+-green.svg)
-![Streamlit](https://img.shields.io/badge/streamlit-1.39+-red.svg)
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-FF4B4B.svg)
+![OpenAI](https://img.shields.io/badge/AI-OpenAI%20%7C%20Gemini-green)
 
-## 🚀 Features
+## 🌟 Features
 
-- **📄 Resume Parsing**: Supports PDF, DOCX, and TXT formats with robust text extraction
-- **🤖 AI-Powered Analysis**: Uses Sentence-Transformers for semantic similarity matching
-- **🎯 Skill Matching**: Optimized algorithm to identify technical and soft skills
-- **🔍 Keyword Extraction**: TF-IDF based keyword extraction from job descriptions
-- **💡 Smart Recommendations**: Actionable insights to improve resume quality
-- **📊 Interactive Dashboard**: Modern, dark-themed interface with tabs and visualizations
-- **⚡ Fast Performance**: Cached models for quick analysis
+This application includes **18+ Advanced Tools** organized into a modular dashboard:
 
-## 🎨 Premium UI
+### 🧠 Core Analysis
+*   **Resume Analysis**: Deep insights into keywords, structure, and action verbs.
+*   **JD Auto-Fetcher**: Scrape job descriptions directly from LinkedIn/Indeed URLs.
+*   **Skill Gap Analysis**: Identify missing critical skills for any job.
+*   **Resume Optimizer**: AI-powered rewriting of your summary and bullet points.
 
-- Modern dark theme with gold accents
-- Glassmorphism design elements
-- Interactive tabs and visualizations
-- Responsive layout
-- Smooth animations
+### 🎓 Learning & Prep
+*   **Learning Path**: Auto-generated course roadmap (YouTube/Coursera) for missing skills.
+*   **Interview Prep**: Generates role-specific technical & behavioral questions.
+*   **Mock Interview Bot**: Real-time chat simulation with an AI hiring manager.
+*   **Project Recommender**: Suggests portfolio projects to fill skill gaps.
 
-## 🛠️ Technology Stack
+### 💼 Platform Integrations
+*   **GitHub Portfolio**: Analyzes your GitHub profile to showcase your coding stats.
+*   **LinkedIn Sync**: Compares your resume against your LinkedIn PDF export.
+*   **Student Coach**: Specialized mode for freshers/interns focusing on potential over experience.
 
-- **Frontend**: Streamlit
-- **AI/ML**: Sentence-Transformers, NLTK, scikit-learn
-- **Data Processing**: Pandas, NumPy
-- **Document Parsing**: pdfplumber, docx2txt
-- **Deep Learning**: PyTorch
-
-## 📦 Installation
-
-### Prerequisites
-
-- Python 3.9 or higher
-- pip package manager
-
-### Setup
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/nfsprogramming/smartresumeanlyzer.git
-   cd smartresumeanlyzer
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the application**:
-   ```bash
-   streamlit run app.py
-   ```
-
-The app will open in your default browser at `http://localhost:8501`.
-
-## 🌐 Cloud Deployment
-
-Deploy to Streamlit Cloud for free:
-
-1. Push your code to GitHub
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Sign in with GitHub
-4. Click "New app" and select your repository
-5. Set main file: `app.py`
-6. Click "Deploy"
-
-See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
-
-## 📖 Usage
-
-1. **Upload Resume**: Upload your resume in PDF, DOCX, or TXT format
-2. **Add Job Description**: Paste or upload the job description
-3. **Analyze**: Click "Analyze Resume" to get insights
-4. **Review Results**: 
-   - View match score and statistics
-   - Check skill analysis
-   - Review keyword matching
-   - Read actionable recommendations
-
-## 🎯 How It Works
-
-1. **Text Extraction**: Extracts text from uploaded resume
-2. **Preprocessing**: Cleans and normalizes text
-3. **Keyword Analysis**: Uses TF-IDF to extract important keywords from JD
-4. **Skill Matching**: Identifies technical and soft skills
-5. **Semantic Analysis**: Calculates similarity between resume and JD using AI
-6. **Recommendations**: Generates personalized improvement suggestions
-
-## 📊 Analysis Features
-
-- **Match Score**: AI-powered semantic similarity percentage
-- **Skill Detection**: Identifies 50+ common technical and soft skills
-- **Keyword Matching**: Shows which JD keywords are present/missing
-- **Action Verb Count**: Analyzes use of strong action verbs
-- **Quantifiable Metrics**: Suggests adding measurable achievements
-
-## 🔧 Configuration
-
-The app includes pre-configured settings in `.streamlit/config.toml`:
-- Dark theme
-- Gold primary color
-- Monospace font
-- Custom styling
-
-## 📝 Notes
-
-- **First Run**: NLTK data and AI models download automatically on first run
-- **Performance**: Sentence transformer model (~90MB) is cached after first download
-- **Privacy**: All processing happens locally or on your Streamlit Cloud instance
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-- Report bugs
-- Suggest features
-- Submit pull requests
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 👨‍💻 Developer
-
-**NFS Programming**
-- GitHub: [@nfsprogramming](https://github.com/nfsprogramming)
-- Repository: [smartresumeanlyzer](https://github.com/nfsprogramming/smartresumeanlyzer)
-
-## 🙏 Acknowledgments
-
-- Streamlit for the amazing framework
-- Sentence-Transformers for semantic analysis
-- NLTK for natural language processing
-- The open-source community
-
-## 📞 Support
-
-For issues, questions, or suggestions:
-- Open an issue on GitHub
-- Check existing documentation
-- Review deployment guide
+### ⚙️ advanced Tools
+*   **ATS Emulator**: Simulates screening algorithms of Google, Amazon, and Apple.
+*   **Bias Checker**: Detects unconscious bias (gender/age) in your writing.
+*   **Job Tracker**: Database-backed application tracking with auto-alerts.
+*   **Resume Vault**: Version control system to save and rollback resume versions.
 
 ---
 
-**Built with ❤️ by NFS Programming** | © 2026 All Rights Reserved
+## 🛠️ Installation
+
+1.  **Clone the repository** (if not already downloaded).
+2.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Setup Environment Variables**:
+    *   Rename `.env.example` to `.env`.
+    *   Add your API Keys (OpenAI is recommended for full features).
+    ```ini
+    OPENAI_API_KEY=sk-...
+    GITHUB_TOKEN=ghp_... (Optional)
+    YOUTUBE_API_KEY=... (Optional)
+    ```
+
+## 🚀 Usage
+
+Run the dashboard locally:
+
+```bash
+streamlit run app.py
+```
+
+The app will open in your browser at `http://localhost:8501`.
+
+## 📂 Project Structure
+
+*   `app.py`: Main Dashboard and entry point.
+*   `pages/`: Individual tools (JD Fetcher, Rewriter, etc.).
+*   `modules/`: Core logic (AI engines, Analyzers).
+*   `utils/`: Helper functions and UI Design System.
+*   `database/`: SQLite database for the Job Tracker.
+
+## 🎨 UI & Design
+
+The app features a **Premium Glassmorphism Design System** (`utils/ui.py`) with:
+*   Animated Deep Space Backgrounds.
+*   Lottie Animations.
+*   Dark Mode suited for long coding sessions.
+
+---
+**Author**: NFS Photographer
+**Version**: 2.0
