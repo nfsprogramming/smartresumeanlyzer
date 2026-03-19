@@ -4,7 +4,7 @@ FROM python:3.10-slim
 # Set working directory
 WORKDIR /app
 
-# Install system dependencies (for building some python packages)
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
@@ -18,8 +18,10 @@ COPY requirements.txt .
 # Install Python Dependencies
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-# Download NLTK data (if not already handled in code, but good practice to allow pre-cache)
-RUN python3 -m textblob.download_corpora
+# Pre-download AI models to save startup time
+RUN python3 -m textblob.download_corpora && \
+    python3 -m spacy download en_core_web_sm && \
+    python3 -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('all-MiniLM-L6-v2')"
 
 # Copy App Source Code
 COPY . .

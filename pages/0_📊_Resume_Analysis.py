@@ -92,7 +92,7 @@ if st.button("Run Full Analysis", type="primary"):
                     showlegend=False, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
                     height=350, margin=dict(l=40, r=40, t=10, b=10)
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width='stretch')
             else:
                 st.info("Upload a resume to see your Skill DNA.")
 
@@ -142,7 +142,7 @@ if st.button("Run Full Analysis", type="primary"):
         
         with t3:
             if kw_rows:
-                st.dataframe(pd.DataFrame(kw_rows), use_container_width=True)
+                st.dataframe(pd.DataFrame(kw_rows), width='stretch')
             else:
                 st.info("Enter a JD to see keyword analysis.")
                 

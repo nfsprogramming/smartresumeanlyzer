@@ -87,7 +87,7 @@ else:
         
         c_radar, c_detail = st.columns([1, 1])
         with c_radar:
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width='stretch')
             
         with c_detail:
             for cat in categories:
@@ -109,10 +109,10 @@ else:
         # Visualize Strength
         fig_bar = px.bar(df, x='Section', y='Strength Score', color='Strength Score', 
                          color_continuous_scale='Viridis', title="Section Strength Analysis")
-        st.plotly_chart(fig_bar, use_container_width=True)
+        st.plotly_chart(fig_bar, width='stretch')
         
         st.markdown("### Detailed Breakdown")
-        st.dataframe(df, use_container_width=True)
+        st.dataframe(df, width='stretch')
         
         st.divider()
         st.markdown("### ☁️ Keyword Cloud")

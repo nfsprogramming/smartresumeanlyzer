@@ -75,5 +75,17 @@ Congratulations on deploying the Smart Resume Analyzer 2.0! This Enterprise-Grad
 **Q: Why does the AI say "OpenAI Key Missing"?**
 A: You need to put your API Key in `.env` or the Settings page. Without it, the app runs in "Local/Demo" mode with limited capability.
 
-**Q: Can I run this on the cloud?**
-A: Yes! The project includes a `Dockerfile`. You can deploy it to AWS, Azure, or Render easily.
+## 🌐 Cloud Deployment (Render.com)
+The project is optimized for deployment on **Render.com** using the included `Dockerfile` and `render.yaml` blueprint.
+
+### 🚀 One-Click Deployment
+1.  **Fork/Push your repo to GitHub**.
+2.  **Log in to Render.com**.
+3.  **Go to "Blueprints"** and connect your repository. 
+4.  Render will automatically detect the `render.yaml` and set up:
+    *   **The Web Service** (Docker-based).
+    *   **Persistent Storage** (to save your Job Tracker data between restarts).
+5.  **Environment Variables**: You will be prompted to enter your `OPENAI_API_KEY`, `GITHUB_TOKEN`, and `YOUTUBE_API_KEY`.
+
+### ⚠️ Performance Tip
+Since this app uses large AI models (**Torch**, **SentenceTransformers**), I recommend the **"Starter" ($7/mo)** plan on Render. The **Free Tier (512MB RAM)** will likely experience "Out of Memory" crashes when loading the NLP modules.

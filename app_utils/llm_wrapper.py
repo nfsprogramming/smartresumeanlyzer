@@ -6,7 +6,7 @@ Centralizes AI calls. Uses OpenAI if available, otherwise defaults to Pollinatio
 import os
 import requests
 import json
-from config import APIKeys
+from config import APIKeys, Settings
 
 # Pollinations AI Endpoint (Free, No Auth)
 POLLINATIONS_BASE_URL = "https://text.pollinations.ai/"

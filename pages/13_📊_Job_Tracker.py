@@ -92,7 +92,7 @@ if not df.empty:
         },
         disabled=["id"],
         hide_index=True,
-        use_container_width=True,
+        width='stretch',
         key="editor"
     )
     

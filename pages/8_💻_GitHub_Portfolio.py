@@ -84,7 +84,7 @@ if st.button("Analyze Profile", type="primary"):
                         # Pie chart
                         df_lang = pd.DataFrame(list(langs.items()), columns=['Language', 'Percentage'])
                         fig = px.pie(df_lang, values='Percentage', names='Language', hole=0.4)
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width='stretch')
                     else:
                         st.info("No language data found.")
                         
