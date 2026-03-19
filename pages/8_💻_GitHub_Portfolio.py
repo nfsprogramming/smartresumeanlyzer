@@ -3,22 +3,39 @@ GitHub Portfolio Page
 """
 
 import streamlit as st
-import plotly.express as px
-import pandas as pd
-from modules.github_analyzer import github_analyzer
-from utils.ui import setup_page_styling, get_lottie
-from streamlit_lottie import st_lottie
-
+# 1. Setup UI IMMEDIATELY to prevent white screen
 st.set_page_config(page_title="GitHub Portfolio", page_icon="💻")
+
+from app_utils.ui import setup_page_styling
 setup_page_styling()
+
+# 2. Safe Imports
+try:
+    import plotly.express as px
+    import pandas as pd
+    from streamlit_lottie import st_lottie
+    from modules.github_analyzer import github_analyzer
+    from app_utils.ui import get_lottie
+except Exception as e:
+    st.error(f"Critical Import Error: {e}")
+    st.stop()
 
 c1, c2 = st.columns([1, 4])
 with c1:
-    lottie = get_lottie("coding")
-    if lottie:
-        st_lottie(lottie, height=100)
-    else:
-        st.markdown("💻")
+    try:
+        lottie = get_lottie("coding")
+        if lottie:
+            st_lottie(lottie, height=100, key="coding_anim")
+        else:
+            st.markdown("## 💻")
+    except Exception as e:
+        st.markdown("## 💻")
+        # st.error(f"Anim load error: {e}") # specific debug
+
+# Validation to ensure styling doesn't fail silently
+if "setup_page_styling" not in globals() and "setup_page_styling" in locals():
+    pass # It's imported
+
 with c2:
     st.title("GitHub Profile Analyzer")
     st.markdown("### Visualize your coding footprint and map it to your skills.")

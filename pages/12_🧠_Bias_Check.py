@@ -4,7 +4,7 @@ Bias Check Page
 
 import streamlit as st
 from modules.bias_detector import bias_detector
-from utils.ui import setup_page_styling
+from app_utils.ui import setup_page_styling
 
 st.set_page_config(page_title="Bias Detection", page_icon="🧠")
 setup_page_styling()

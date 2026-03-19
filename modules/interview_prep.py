@@ -3,7 +3,7 @@ Interview Preparation Module
 Features: Question Generator, Model Answers
 """
 
-from utils.llm_wrapper import ai_engine
+from app_utils.llm_wrapper import ai_engine
 import json
 
 class InterviewCoach:

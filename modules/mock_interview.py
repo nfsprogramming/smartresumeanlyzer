@@ -2,7 +2,7 @@
 Mock Interview Module
 """
 
-from utils.llm_wrapper import ai_engine
+from app_utils.llm_wrapper import ai_engine
 
 class MockInterviewer:
     def get_response(self, history: list, user_input: str) -> str:

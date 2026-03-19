@@ -4,7 +4,7 @@ Mock Interview Page
 
 import streamlit as st
 from modules.mock_interview import mock_interviewer
-from utils.ui import setup_page_styling
+from app_utils.ui import setup_page_styling
 
 st.set_page_config(page_title="Mock Interview", page_icon="🎤")
 setup_page_styling()

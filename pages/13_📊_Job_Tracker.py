@@ -6,7 +6,7 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime, timedelta
 from database.db_manager import db_manager
-from utils.ui import setup_page_styling, get_lottie
+from app_utils.ui import setup_page_styling, get_lottie
 from streamlit_lottie import st_lottie
 
 st.set_page_config(page_title="Job Tracker", page_icon="📊", layout="wide")

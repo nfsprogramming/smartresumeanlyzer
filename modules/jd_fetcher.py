@@ -15,9 +15,19 @@ class JDFetcher:
     """
     
     HEADERS = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Connection": "keep-alive",
+        "Upgrade-Insecure-Requests": "1",
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "none",
+        "Sec-Fetch-User": "?1",
+        "Cache-Control": "max-age=0",
     }
-    
+
     @staticmethod
     def identify_platform(url: str) -> str:
         """Identify the job platform from the URL."""
@@ -39,7 +49,17 @@ class JDFetcher:
         if not url:
             return ""
             
+        # Automatic URL correction: Add https:// if missing
+        if not url.startswith(('http://', 'https://')):
+            url = 'https://' + url
+            
         platform = self.identify_platform(url)
+        
+        # Warning for LinkedIn Profiles (common user error)
+        if platform == "LinkedIn" and "/in/" in url:
+            st.error("🚫 Error: You entered a LinkedIn Profile URL, not a Job Posting URL.")
+            st.info("Please use a Job URL, for example: `https://www.linkedin.com/jobs/view/12345678`")
+            return ""
         
         try:
             if platform == "LinkedIn":
@@ -49,7 +69,11 @@ class JDFetcher:
             else:
                 return self._scrape_generic(url)
         except Exception as e:
-            st.error(f"Error fetching JD from {platform}: {str(e)}")
+            if "999" in str(e):
+                st.error("⚠️ LinkedIn blocked the request (Status 999). This is common with automated tools.")
+                st.info("💡 Tip: Open the link in your browser, copy the text, and paste it manually into the analysis tool.")
+            else:
+                st.error(f"Error fetching JD from {platform}: {str(e)}")
             return ""
 
     def _scrape_linkedin(self, url: str) -> str:

@@ -4,8 +4,8 @@ Interview Prep Page
 
 import streamlit as st
 from modules.interview_prep import interview_coach
-from utils.analysis_utils import match_skills
-from utils.ui import setup_page_styling, get_lottie, colored_header
+from app_utils.analysis_utils import match_skills
+from app_utils.ui import setup_page_styling, get_lottie, colored_header
 from streamlit_lottie import st_lottie
 
 st.set_page_config(page_title="Interview Prep", page_icon="🎯", layout="wide")

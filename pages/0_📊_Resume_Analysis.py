@@ -7,10 +7,10 @@ import streamlit as st
 import pandas as pd
 import re
 from config import Settings
-from utils.text_processing import count_action_verbs, clean_text
-from utils.analysis_utils import extract_top_keywords, match_skills, semantic_similarity, generate_recommendations
+from app_utils.text_processing import count_action_verbs, clean_text
+from app_utils.analysis_utils import extract_top_keywords, match_skills, semantic_similarity, generate_recommendations
 from modules.skill_analyzer import skill_analyzer
-from utils.ui import setup_page_styling
+from app_utils.ui import setup_page_styling
 
 st.set_page_config(page_title="Deep Resume Analysis", page_icon="📊", layout="wide")
 setup_page_styling()

@@ -4,7 +4,7 @@ JD Auto-Fetcher Page
 
 import streamlit as st
 from modules.jd_fetcher import jd_fetcher
-from utils.ui import setup_page_styling
+from app_utils.ui import setup_page_styling
 
 st.set_page_config(page_title="JD Auto-Fetcher", page_icon="🔍")
 setup_page_styling()

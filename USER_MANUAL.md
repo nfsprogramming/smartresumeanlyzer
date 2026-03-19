@@ -6,7 +6,7 @@ Congratulations on deploying the Smart Resume Analyzer 2.0! This Enterprise-Grad
 ---
 
 ## 🚀 Quick Start
-1.  **Launch the App**: Run `start_app.bat` (Windows) or `streamlit run Home.py`.
+1.  **Launch the App**: Run `start_app.bat` (Windows) or `streamlit run app.py`.
 2.  **Upload Resume**: Go to **Home** and upload your PDF/DOCX resume. This "Master Resume" will be used across all other tools.
 
 ---

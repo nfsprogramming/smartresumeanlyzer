@@ -3,7 +3,7 @@ Resume Rewrite Engine Module
 Uses LLMs via Central AI Engine to rewrite resume content
 """
 
-from utils.llm_wrapper import ai_engine
+from app_utils.llm_wrapper import ai_engine
 
 class ResumeRewriter:
     """

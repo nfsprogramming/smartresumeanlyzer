@@ -6,7 +6,7 @@ Compare profile with resume
 import streamlit as st
 import pdfplumber
 import io
-from utils.ui import setup_page_styling
+from app_utils.ui import setup_page_styling
 
 st.set_page_config(page_title="LinkedIn Sync", page_icon="🔗")
 setup_page_styling()

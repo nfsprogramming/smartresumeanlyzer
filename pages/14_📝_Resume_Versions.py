@@ -4,7 +4,7 @@ Resume Version Control Page
 
 import streamlit as st
 from database.db_manager import db_manager
-from utils.ui import setup_page_styling
+from app_utils.ui import setup_page_styling
 
 st.set_page_config(page_title="Resume Versions", page_icon="📝")
 setup_page_styling()

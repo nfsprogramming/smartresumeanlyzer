@@ -5,7 +5,7 @@ ATS Simulator Page
 import streamlit as st
 from modules.ats_emulator import ats_emulator
 from config import COMPANY_ATS_KEYWORDS
-from utils.ui import setup_page_styling
+from app_utils.ui import setup_page_styling
 
 st.set_page_config(page_title="ATS Simulator", page_icon="🏢")
 setup_page_styling()

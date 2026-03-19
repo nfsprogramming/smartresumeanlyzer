@@ -132,9 +132,8 @@ def setup_page_styling():
 
         /* --- 8. HEADINGS --- */
         h1 {
-            background: linear-gradient(120deg, #fff 0%, #00BFFF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: white;
+            text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
             animation: float 6s ease-in-out infinite;
         }
 

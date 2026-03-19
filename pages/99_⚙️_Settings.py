@@ -4,7 +4,7 @@ Settings & Admin Page
 
 import streamlit as st
 import os
-from utils.ui import setup_page_styling
+from app_utils.ui import setup_page_styling
 
 st.set_page_config(page_title="Settings", page_icon="⚙️")
 setup_page_styling()

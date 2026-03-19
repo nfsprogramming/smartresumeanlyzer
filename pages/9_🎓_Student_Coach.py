@@ -4,7 +4,7 @@ Student Coach Page
 
 import streamlit as st
 from modules.student_mode import student_coach
-from utils.ui import setup_page_styling
+from app_utils.ui import setup_page_styling
 
 st.set_page_config(page_title="Student Mode", page_icon="🎓")
 setup_page_styling()

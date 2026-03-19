@@ -9,7 +9,7 @@ from wordcloud import WordCloud
 from modules.authenticity_checker import authenticity_checker
 from modules.soft_skill_analyzer import soft_skill_analyzer
 from modules.heatmap_generator import heatmap_generator
-from utils.ui import setup_page_styling, get_lottie
+from app_utils.ui import setup_page_styling, get_lottie
 from streamlit_lottie import st_lottie
 
 st.set_page_config(page_title="Resume Intelligence", page_icon="🧠", layout="wide")

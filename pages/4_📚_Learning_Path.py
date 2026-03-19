@@ -4,8 +4,8 @@ Learning Path Page
 
 import streamlit as st
 from modules.course_aggregator import course_aggregator
-from utils.analysis_utils import match_skills
-from utils.ui import setup_page_styling
+from app_utils.analysis_utils import match_skills
+from app_utils.ui import setup_page_styling
 
 st.set_page_config(page_title="Learning Path", page_icon="📚")
 setup_page_styling()
@@ -57,7 +57,7 @@ if st.button("Generate Roadmap", type="primary"):
                         </div>
                     """, unsafe_allow_html=True)
                     
-                    # Optional Video Preview if YouTube
-                    if "youtube.com" in res['url'] or "youtu.be" in res['url']:
+                    # Optional Video Preview if YouTube (Only for actual videos, not search results)
+                    if ("youtube.com/watch" in res['url'] or "youtu.be/" in res['url']) and "search_query" not in res['url']:
                         st.video(res['url'])
             st.markdown("<br>", unsafe_allow_html=True)

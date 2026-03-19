@@ -7,10 +7,10 @@ Enterprise-grade AI Resume Platform
 import streamlit as st
 import pandas as pd
 from config import Settings, APIKeys
-from utils.text_processing import extract_text_from_file, clean_text, count_action_verbs
-from utils.analysis_utils import extract_top_keywords, match_skills, semantic_similarity, generate_recommendations
+from app_utils.text_processing import extract_text_from_file, clean_text, count_action_verbs
+from app_utils.analysis_utils import extract_top_keywords, match_skills, semantic_similarity, generate_recommendations
 from modules.skill_analyzer import skill_analyzer
-from utils.ui import setup_page_styling, get_ai_animation, card
+from app_utils.ui import setup_page_styling, get_ai_animation, card
 from streamlit_lottie import st_lottie
 
 # Configure page

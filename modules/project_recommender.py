@@ -5,7 +5,7 @@ Uses AI to generate unique, tailored project ideas based on missing skills.
 
 from typing import List, Dict
 import json
-from utils.llm_wrapper import ai_engine
+from app_utils.llm_wrapper import ai_engine
 
 class ProjectRecommender:
     """

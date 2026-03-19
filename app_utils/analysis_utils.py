@@ -15,7 +15,8 @@ from config import ALL_SKILLS, Settings
 def load_sentence_transformer():
     return SentenceTransformer(Settings.SENTENCE_TRANSFORMER_MODEL)
 
-EMBED_MODEL = load_sentence_transformer()
+
+# EMBED_MODEL = load_sentence_transformer()
 
 def extract_top_keywords(jd_text: str, top_k=10) -> List[str]:
     if not jd_text or not jd_text.strip():
@@ -48,8 +49,9 @@ def match_skills(resume_text: str, skills_list=ALL_SKILLS) -> Tuple[List[str], L
     return list(set(found)), list(set(missing)) # Ensure unique
 
 def semantic_similarity(a: str, b: str) -> float:
-    emb_a = EMBED_MODEL.encode(a, convert_to_tensor=True)
-    emb_b = EMBED_MODEL.encode(b, convert_to_tensor=True)
+    model = load_sentence_transformer()
+    emb_a = model.encode(a, convert_to_tensor=True)
+    emb_b = model.encode(b, convert_to_tensor=True)
     sim = util.cos_sim(emb_a, emb_b).item()
     return max(0.0, min(1.0, float(sim)))
 

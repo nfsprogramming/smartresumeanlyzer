@@ -5,7 +5,7 @@ Uses AI to curate specific high-quality learning resources with robust error han
 
 import streamlit as st
 import json
-from utils.llm_wrapper import ai_engine
+from app_utils.llm_wrapper import ai_engine
 
 class CourseAggregator:
     """
@@ -26,12 +26,14 @@ class CourseAggregator:
         Output Format (STRICT JSON):
         {{
             "SkillName": [
-                {{"title": "Resource Title", "url": "https://...", "platform": "YouTube", "type": "Video"}},
-                {{"title": "Resource Title", "url": "https://...", "platform": "Docs", "type": "Article"}}
+                {{"title": "Resource Title", "url": "https://www.youtube.com/results?search_query=...", "platform": "YouTube", "type": "Video"}},
+                {{"title": "Resource Title", "url": "https://www.google.com/search?q=...", "platform": "Google", "type": "Article"}}
             ]
         }}
         
-        Note: The value MUST be a LIST of objects.
+        IMPORTANT:
+        1. For YouTube: ALWAYS return a search URL (e.g., https://www.youtube.com/results?search_query=Learn+Python) instead of a specific video ID.
+        2. For Articles/Docs: ALWAYS return a Google Search URL (e.g., https://www.google.com/search?q=Python+Data+Types) instead of a specific website link. Specific links (like MindTools or GeeksForGeeks deep links) often 404.
         """
         
         response = ai_engine.chat(prompt, system="You are an expert technical mentor. Return ONLY clean JSON.")

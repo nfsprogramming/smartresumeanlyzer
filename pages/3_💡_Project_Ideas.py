@@ -6,8 +6,8 @@ import streamlit as st
 import pandas as pd
 from modules.skill_analyzer import skill_analyzer
 from modules.project_recommender import project_recommender
-from utils.analysis_utils import match_skills
-from utils.ui import setup_page_styling
+from app_utils.analysis_utils import match_skills
+from app_utils.ui import setup_page_styling
 
 st.set_page_config(page_title="Project Ideas", page_icon="💡")
 setup_page_styling()
