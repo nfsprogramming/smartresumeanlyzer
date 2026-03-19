@@ -1,6 +1,0 @@
-chromium
-chromium-driver
-libgomp1
-libgl1
-libglib2.0-0
-poppler-utils
